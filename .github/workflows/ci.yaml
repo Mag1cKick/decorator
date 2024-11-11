@@ -27,7 +27,7 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Install dependencies
-        run: mvn --batch-mode dependency:resolve
+        run: mvn -f demo/pom.xml --batch-mode dependency:resolve
 
       - name: Test with Maven
-        run: mvn --batch-mode --update-snapshots package
+        run: mvn -f demo/pom.xml --batch-mode --update-snapshots package
